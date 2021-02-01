@@ -18,7 +18,7 @@ def read_seeds(path):
 
 def segmentation(result):
     # Ground Truth
-    gt = nib.load("Material/V_seg.nii")
+    gt = nib.load("V_seg.nii")
     gt_data = gt.get_fdata()
 
     return dice_score(result,gt_data)
@@ -111,7 +111,7 @@ def eight_region_growing(image, image_copy, seed):
 
 
 # load image
-epi_img = nib.load('./Material/V.nii')
+epi_img = nib.load('V.nii')
 image = epi_img.get_fdata()
 
 seeds = [[100, 20, 46], [80, 40, 47], [20, 20, 48], [130, 20, 49], [150, 0, 50], [50, 30, 50], [170, 70, 51], [0, 20, 51], [100, 20, 52], [80, 40, 52]]

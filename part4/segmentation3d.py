@@ -16,7 +16,7 @@ def read_seeds(path):
 
 def segmentation(result):
     # Ground Truth
-    gt = nib.load("Material/V_seg.nii")
+    gt = nib.load("V_seg.nii")
     gt_data = gt.get_fdata()  
 
     return segmentation2d.dice_score(result, gt_data)
@@ -49,7 +49,7 @@ def six_neighbours_region_growing(point,image_copy):
 
 
 # load image
-epi_img = nib.load('./Material/V.nii')
+epi_img = nib.load('V.nii')
 image = epi_img.get_fdata()
 
 copy = np.full(image.shape, -1)
